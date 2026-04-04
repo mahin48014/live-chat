@@ -5,25 +5,32 @@
   <title>Live Chat Messenger</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="app">
-    <header>
-      <h1>Live Chat</h1>
-      <div id="userControls">
-        <input id="nameInput" placeholder="Your name" maxlength="30" />
-        <button id="setNameBtn">Set</button>
+    <header class="app-header">
+      <h1 class="app-title">Live Chat</h1>
+      <div id="userControls" class="user-controls">
+        <input id="nameInput" class="input-field user-name-input" placeholder="Your name" maxlength="30" />
+        <button id="setNameBtn" class="btn btn-primary">Set</button>
       </div>
     </header>
 
-    <main>
-      <ul id="messages"></ul>
+    <main class="app-main">
+      <ul id="messages" class="message-list">
+        <!-- Messages will be appended here -->
+      </ul>
     </main>
 
-    <form id="messageForm">
-      <input id="messageInput" autocomplete="off" placeholder="Type a message..." maxlength="1000" />
-      <button type="submit">Send</button>
-    </form>
+    <footer class="app-footer">
+      <form id="messageForm" class="message-form">
+        <input id="messageInput" class="input-field message-input" autocomplete="off" placeholder="Type a message..." maxlength="1000" />
+        <button type="submit" class="btn btn-send">Send</button>
+      </form>
+    </footer>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
